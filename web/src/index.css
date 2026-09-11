@@ -223,6 +223,11 @@ main,
   color: #cfcfcf;
 }
 
+.hint {
+  margin: -8px 0 28px;
+  color: var(--muted) !important;
+}
+
 #stack .chips {
   max-width: 62ch;
 }

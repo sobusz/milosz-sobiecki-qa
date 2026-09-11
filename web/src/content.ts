@@ -39,7 +39,7 @@ type Copy = {
   }
   about: { title: string; body: string[] }
   stackTitle: string
-  snippets: { title: string }
+  snippets: { title: string; hint: string }
   project: {
     title: string
     name: string
@@ -86,6 +86,7 @@ export const copy: Record<Locale, Copy> = {
     stackTitle: 'Stack',
     snippets: {
       title: 'How I test',
+      hint: 'Hover to check the assertion.',
     },
     project: {
       title: 'Featured',
@@ -169,6 +170,7 @@ export const copy: Record<Locale, Copy> = {
     stackTitle: 'Stack',
     snippets: {
       title: 'Jak testuję',
+      hint: 'Najedź, żeby zobaczyć asercję.',
     },
     project: {
       title: 'Projekt',

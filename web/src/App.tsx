@@ -133,6 +133,7 @@ export default function App() {
           <div className="index">04</div>
           <div className="block-wide">
             <h2>{t.snippets.title}</h2>
+            <p className="hint">{t.snippets.hint}</p>
             <div className="snippet-grid">
               {snippets.map((snippet, index) => (
                 <article className="case" id={snippet.id} key={snippet.id}>
