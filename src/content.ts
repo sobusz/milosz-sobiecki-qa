@@ -70,7 +70,7 @@ export const copy: Record<Locale, Copy> = {
     langLabel: 'Language',
     hero: {
       name: 'Miłosz Sobiecki QA Services',
-      line: 'QA automation for APIs and payments. Currently building around AI in the loop.',
+      line: 'E2E automation in TypeScript, with AI in the daily workflow.',
       location: 'Available · Gdańsk / hybrid / remote PL · B2B',
       languages: 'Polish native · English C1 · Italian B1',
       cv: 'Download CV',
@@ -79,9 +79,9 @@ export const copy: Record<Locale, Copy> = {
     about: {
       title: 'About',
       body: [
-        'Gdańsk-based QA automation engineer. Five years of owning quality on web, mobile, and backend systems — including fintech, payments, and regulated delivery.',
-        'I design TypeScript checks for REST and async integrations, keep Cypress and Playwright regression honest, verify data in PostgreSQL, and raise load risk with JMeter before production. I work with developers from design through UAT, not only after a ticket is marked done.',
-        'What I am investing in now is AI in QA — and that is how I actually work. I use it to draft tests, probe prompts and model output, and move faster on design. I still own the review: the assertion, the logs, and the SQL. MSc in IT and Econometrics, University of Gdańsk.',
+        'QA automation engineer based in Gdańsk. Five years on web, mobile, and backend. My focus is E2E automation; I have also worked on API checks, fintech, and regulated projects.',
+        'I write E2E suites in Playwright and Cypress, plus TypeScript checks for REST and async integrations. I also check data in PostgreSQL and run JMeter before release. I work with developers from design through UAT.',
+        'Lately I have been focusing on AI in QA: drafting tests, checking prompts and model output, then reviewing before anything goes into the suite. MSc in IT and Econometrics, University of Gdańsk.',
       ],
     },
     stackTitle: 'Stack',
@@ -93,7 +93,7 @@ export const copy: Record<Locale, Copy> = {
     projects: [
       {
         name: 'Playwright portfolio',
-        body: 'A TypeScript suite I use to show how I structure automation: UI/E2E, API CRUD with Zod contracts, Axe, visual regression, performance smoke, auth storage state, and network mocks. Page Objects, fixtures, faker factories, tagged runs — the same habits I bring to client work.',
+        body: 'A TypeScript suite for UI/E2E, API CRUD with Zod, Axe, visual regression, performance smoke, auth storage state, and network mocks. Page Objects, fixtures, faker factories, tagged runs.',
         tags: ['Playwright', 'Zod', 'Axe', 'POM', 'API', 'Visual', 'Mock'],
         cta: 'GitHub',
         href: LINKS.github,
@@ -107,11 +107,9 @@ export const copy: Record<Locale, Copy> = {
         dates: 'Jun 2025 — present',
         meta: 'Remote · B2B',
         points: [
-          'Own API automation in TypeScript (Mocha, Chai, Supertest) for end-to-end business workflows across distributed services.',
-          'Validate AMQP flows, PostgreSQL data, generated reports, and high-volume datasets before a release is called ready.',
-          'Run JMeter load scenarios, read response times and saturation, and flag performance risk to the team — not after production.',
-          'Keep Cypress/Playwright regression in CI, support UAT, and stay accountable for production readiness in a regulated setup.',
-          'Use AI daily for test design and analysis — then review generated output for correctness before it lands in the suite.',
+          'TypeScript API automation (Mocha, Chai, Supertest) for distributed services.',
+          'AMQP, PostgreSQL, reports, and JMeter checks before release.',
+          'Cypress/Playwright in CI, UAT support, and AI-assisted test design.',
         ],
       },
       {
@@ -120,9 +118,9 @@ export const copy: Record<Locale, Copy> = {
         dates: 'Mar 2024 — Jun 2025',
         meta: 'B2B · hybrid · Gdańsk',
         points: [
-          'Owned functional, exploratory, and regression QA for web and mobile products used by international clients — including fintech and payment flows.',
-          'Tested REST APIs, authentication, and integrations in Postman; verified persisted data with SQL; diagnosed failures from application and device logs.',
-          'Wrote test plans and release evidence, worked directly with developers and stakeholders, and supported mobile-store and production releases.',
+          'Functional, exploratory and regression QA for web and mobile, including payments.',
+          'REST, auth and integrations in Postman; SQL and device logs.',
+          'Test plans and support for store and production releases.',
         ],
       },
       {
@@ -131,8 +129,8 @@ export const copy: Record<Locale, Copy> = {
         dates: 'Aug 2022 — Feb 2024',
         meta: 'Remote',
         points: [
-          'Backend-heavy quality in a regulated environment: REST, data, async integrations, and release gates.',
-          'Built and maintained TypeScript API checks, regression in Cypress/Playwright, and CI/CD failure analysis through UAT.',
+          'Backend testing in a regulated setup: REST, data, and async flows.',
+          'TypeScript API checks and Cypress/Playwright regression in CI.',
         ],
       },
       {
@@ -141,7 +139,7 @@ export const copy: Record<Locale, Copy> = {
         dates: 'Jun 2022 — Aug 2022',
         meta: 'Remote',
         points: [
-          'Turned requirements and wireframes into web scenarios, ran smoke and regression, and contributed Cypress UI automation.',
+          'Web scenarios from requirements, smoke/regression, and Cypress UI tests.',
         ],
       },
       {
@@ -150,7 +148,7 @@ export const copy: Record<Locale, Copy> = {
         dates: 'May 2021 — Jun 2022',
         meta: 'Gdańsk',
         points: [
-          'Tested conversational AI products and APIs: intents, edge cases, and regression of NLP / LLM generated output.',
+          'Conversational AI products and APIs: intents, edge cases, NLP / LLM output.',
         ],
       },
       {
@@ -175,7 +173,7 @@ export const copy: Record<Locale, Copy> = {
     langLabel: 'Język',
     hero: {
       name: 'Miłosz Sobiecki QA Services',
-      line: 'Automatyzacja QA dla API i płatności. Aktualnie rozwijam się w AI — tak pracuję.',
+      line: 'Automatyzacja E2E w TypeScript, z AI w codziennej pracy.',
       location: 'Dostępny · Gdańsk / hybryda / remote PL · B2B',
       languages: 'Polski native · English C1 · włoski B1',
       cv: 'Pobierz CV',
@@ -184,9 +182,9 @@ export const copy: Record<Locale, Copy> = {
     about: {
       title: 'O mnie',
       body: [
-        'QA automation engineer z Gdańska. Od pięciu lat biorę odpowiedzialność za jakość na webie, mobile i backendzie — w tym fintech, płatności i delivery w środowisku regulowanym.',
-        'Projektuję testy w TypeScript na REST i integracje asynchroniczne, utrzymuję regresję Cypress i Playwright, sprawdzam dane w PostgreSQL i z JMeterem pokazuję ryzyko obciążenia zanim coś pójdzie na produkcję. Siedzę z developerami od designu po UAT, nie dopiero gdy ticket jest „done”.',
-        'To, w czym się teraz rozwijam i co mnie kręci, to AI w QA — i tak wygląda moja codzienność. Draft testów, sprawdzanie promptów i outputu modelu, szybszy design. Recenzję i tak biorę na siebie: asercja, logi, SQL. Magister informatyki i ekonometrii, Uniwersytet Gdański.',
+        'QA automation engineer z Gdańska. Pięć lat na webie, mobile i backendzie. Skupiam się na automatyzacji E2E; po drodze też testy API, fintech i projekty regulowane.',
+        'Piszę suite’y E2E w Playwright i Cypress, a także testy TypeScript na REST i integracje asynchroniczne. Sprawdzam dane w PostgreSQL i odpalam JMeter przed release’em. Pracuję z developerami od designu po UAT.',
+        'Ostatnio skupiam się na AI w QA: draft testów, sprawdzanie promptów i outputu modelu, recenzja zanim coś trafi do suite’u. Magister informatyki i ekonometrii, Uniwersytet Gdański.',
       ],
     },
     stackTitle: 'Stack',
@@ -198,7 +196,7 @@ export const copy: Record<Locale, Copy> = {
     projects: [
       {
         name: 'Playwright portfolio',
-        body: 'Suite w TypeScript, na której pokazuję jak układam automatyzację: UI/E2E, CRUD API z kontraktami Zod, Axe, visual regression, smoke wydajnościowy, auth storage state i mocki sieci. Page Objects, fixtures, fabryki faker, tagi — te same nawyki co na projektach klienckich.',
+        body: 'Suite w TypeScript: UI/E2E, CRUD API z Zod, Axe, visual regression, smoke wydajnościowy, auth storage state i mocki sieci. Page Objects, fixtures, fabryki faker, tagi.',
         tags: ['Playwright', 'Zod', 'Axe', 'POM', 'API', 'Visual', 'Mock'],
         cta: 'GitHub',
         href: LINKS.github,
@@ -212,11 +210,9 @@ export const copy: Record<Locale, Copy> = {
         dates: 'cze 2025 — obecnie',
         meta: 'Remote · B2B',
         points: [
-          'Odpowiadam za automatyzację API w TypeScript (Mocha, Chai, Supertest) dla end-to-end przepływów biznesowych w usługach rozproszonych.',
-          'Weryfikuję przepływy AMQP, dane w PostgreSQL, generowane raporty i duże zbiory danych, zanim release zostanie uznany za gotowy.',
-          'Odpalam scenariusze obciążeniowe w JMeterze, czytam czasy odpowiedzi i saturację i zgłaszam ryzyko wydajności zespołowi — nie po wpadce na produkcji.',
-          'Utrzymuję regresję Cypress/Playwright w CI, wspieram UAT i odpowiadam za gotowość produkcyjną w środowisku regulowanym.',
-          'Na co dzień używam AI do projektowania i analizy testów — a wygenerowany output recenzuję, zanim wpadnie do suite’u.',
+          'Automatyzacja API w TypeScript (Mocha, Chai, Supertest) w usługach rozproszonych.',
+          'AMQP, PostgreSQL, raporty i sprawdzenia JMeter przed release’em.',
+          'Cypress/Playwright w CI, wsparcie UAT i testy z pomocą AI.',
         ],
       },
       {
@@ -225,9 +221,9 @@ export const copy: Record<Locale, Copy> = {
         dates: 'mar 2024 — cze 2025',
         meta: 'B2B · hybryda · Gdańsk',
         points: [
-          'Wziąłem na siebie QA funkcyjne, eksploracyjne i regresję produktów web i mobile dla klientów zagranicznych — w tym fintech i płatności.',
-          'Testowałem REST, autoryzację i integracje w Postmanie; sprawdzałem dane SQL; diagnozowałem błędy z logów aplikacji i urządzeń.',
-          'Pisałem plany testów i dowody release’u, pracowałem bezpośrednio z developerami i stakeholderami, wspierałem wydania do sklepów mobilnych i na produkcję.',
+          'QA funkcyjne, eksploracyjne i regresja web i mobile, w tym płatności.',
+          'REST, auth i integracje w Postmanie; SQL i logi z urządzeń.',
+          'Plany testów oraz wsparcie wydań do sklepu i na produkcję.',
         ],
       },
       {
@@ -236,8 +232,8 @@ export const copy: Record<Locale, Copy> = {
         dates: 'sie 2022 — lut 2024',
         meta: 'Remote',
         points: [
-          'Jakość po stronie backendu w środowisku regulowanym: REST, dane, integracje async i bramki release’u.',
-          'Budowa i utrzymanie testów API w TypeScript, regresja Cypress/Playwright oraz analiza padów CI przez UAT.',
+          'Testy backendu w środowisku regulowanym: REST, dane, przepływy async.',
+          'Testy API w TypeScript oraz regresja Cypress/Playwright w CI.',
         ],
       },
       {
@@ -246,7 +242,7 @@ export const copy: Record<Locale, Copy> = {
         dates: 'cze 2022 — sie 2022',
         meta: 'Remote',
         points: [
-          'Scenariusze web z wymagań i makiet, smoke i regresja, wkład w automatyzację UI w Cypress.',
+          'Scenariusze web z wymagań, smoke/regresja i testy UI w Cypress.',
         ],
       },
       {
@@ -255,7 +251,7 @@ export const copy: Record<Locale, Copy> = {
         dates: 'maj 2021 — cze 2022',
         meta: 'Gdańsk',
         points: [
-          'Testy produktów conversational AI i API: intenty, brzegi, regresja outputu NLP / LLM.',
+          'Produkty conversational AI i API: intenty, brzegi, output NLP / LLM.',
         ],
       },
       {
@@ -520,12 +516,12 @@ export const snippets: {
     file: 'web/src/App.tsx',
     title: { en: 'How I work with AI', pl: 'Tak pracuję z AI' },
     body: {
-      en: 'This is the loop I am doubling down on: AI drafts, I review like a PR — locale, behaviour, and whether the assertion still means something.',
-      pl: 'Ten loop rozwijam na poważnie: AI robi draft, ja recenzuję jak PR — locale, zachowanie i to, czy asercja nadal coś znaczy.',
+      en: 'AI drafts, then I review: locale, behaviour, and whether the assertion still holds.',
+      pl: 'AI robi draft, potem recenzja: locale, zachowanie i to, czy asercja nadal ma sens.',
     },
     note: {
-      en: 'First pass from the model. Ownership stays with me.',
-      pl: 'Pierwszy pass z modelu. Ownership zostaje u mnie.',
+      en: 'First pass from the model, then a review.',
+      pl: 'Pierwszy pass z modelu, potem recenzja.',
     },
     lines: [
       { text: "const STORAGE_KEY = 'ms-locale'" },

@@ -49,7 +49,7 @@ button {
 
 .page {
   position: relative;
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px 72px;
 }
@@ -219,7 +219,7 @@ main,
 }
 
 .block p {
-  max-width: 62ch;
+  max-width: 88ch;
   color: #cfcfcf;
 }
 
@@ -229,7 +229,7 @@ main,
 }
 
 #stack .chips {
-  max-width: 62ch;
+  max-width: 88ch;
 }
 
 .chips {
@@ -514,15 +514,15 @@ main,
   padding: 0;
 }
 
-.timeline li {
+.timeline > li {
   display: grid;
-  grid-template-columns: minmax(140px, 180px) 1fr;
-  gap: 20px;
-  padding: 18px 0;
+  grid-template-columns: minmax(11rem, 13rem) minmax(0, 1fr);
+  gap: 40px;
+  padding: 16px 0;
   border-bottom: 1px solid var(--line);
 }
 
-.timeline li:last-child {
+.timeline > li:last-child {
   border-bottom: 0;
 }
 
@@ -555,16 +555,17 @@ main,
 .points {
   margin: 10px 0 0;
   padding: 0;
-  max-width: 62ch;
+  max-width: none;
   list-style: none;
 }
 
 .points li {
   position: relative;
-  margin-top: 8px;
+  margin-top: 6px;
   padding-left: 1.1em;
   color: #cfcfcf;
   font-size: 0.95rem;
+  white-space: nowrap;
 }
 
 .points li::before {
@@ -615,9 +616,13 @@ main,
     padding-top: 0;
   }
 
-  .timeline li {
+  .timeline > li {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+
+  .points li {
+    white-space: normal;
   }
 
   .hero {
