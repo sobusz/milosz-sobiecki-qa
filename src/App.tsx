@@ -124,7 +124,11 @@ export default function App() {
                     <strong>{role.company}</strong>
                     <span className="role">{role.role}</span>
                     <span className="quiet">{role.meta}</span>
-                    <p className="summary">{role.summary}</p>
+                    <ul className="points">
+                      {role.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
                   </div>
                 </li>
               ))}
@@ -162,25 +166,34 @@ export default function App() {
         <section id="work" className="block">
           <div className="index">05</div>
           <div>
-            <h2>{t.project.title}</h2>
-            <a className="project" href={LINKS.github} target="_blank" rel="noreferrer">
-              <div className="project-top">
-                <h3>{t.project.name}</h3>
-                <span>{t.project.cta} →</span>
-              </div>
-              <p>{t.project.body}</p>
-              <ul className="chips chips-tight">
-                {t.project.tags.map((tag) => (
-                  <li key={tag}>{tag}</li>
-                ))}
-              </ul>
-            </a>
+            <h2>{t.projectsTitle}</h2>
+            <div className="project-list">
+              {t.projects.map((project) => (
+                <a
+                  className="project"
+                  href={project.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={project.name}
+                >
+                  <div className="project-top">
+                    <h3>{project.name}</h3>
+                    <span>{project.cta} →</span>
+                  </div>
+                  <p>{project.body}</p>
+                  <ul className="chips chips-tight">
+                    {project.tags.map((tag) => (
+                      <li key={tag}>{tag}</li>
+                    ))}
+                  </ul>
+                </a>
+              ))}
+            </div>
           </div>
         </section>
       </main>
 
       <footer className="foot">
-        <span>{t.footer}</span>
         <div className="actions actions-foot">{contact}</div>
       </footer>
     </div>
