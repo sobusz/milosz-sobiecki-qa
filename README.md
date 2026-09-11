@@ -4,7 +4,7 @@ Public site for [Miłosz Sobiecki QA Services](https://github.com/sobusz/milosz-
 
 The Playwright test suite lives in a separate repo: [sobusz/playwright-portfolio](https://github.com/sobusz/playwright-portfolio).
 
-Live: https://sobusz.github.io/milosz-sobiecki-qa/
+Live: https://miloszsobiecki.pl
 
 ```bash
 npm install
