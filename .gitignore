@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local copies of the Playwright suite and leftover Vite scaffold
+Milosz-Sobiecki-QA-Portfolio-main/
+web/
+src/assets/
+

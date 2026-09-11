@@ -37,6 +37,9 @@ export default function App() {
       <a className="btn" href={LINKS.linkedin} target="_blank" rel="noreferrer">
         LinkedIn
       </a>
+      <a className="btn" href={LINKS.github} target="_blank" rel="noreferrer">
+        GitHub
+      </a>
       <a className="btn" href={`mailto:${LINKS.email}`}>
         {t.hero.mail}
       </a>
@@ -160,9 +163,10 @@ export default function App() {
           <div className="index">05</div>
           <div>
             <h2>{t.project.title}</h2>
-            <article className="project">
+            <a className="project" href={LINKS.github} target="_blank" rel="noreferrer">
               <div className="project-top">
                 <h3>{t.project.name}</h3>
+                <span>{t.project.cta} →</span>
               </div>
               <p>{t.project.body}</p>
               <ul className="chips chips-tight">
@@ -170,7 +174,7 @@ export default function App() {
                   <li key={tag}>{tag}</li>
                 ))}
               </ul>
-            </article>
+            </a>
           </div>
         </section>
       </main>

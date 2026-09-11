@@ -3,7 +3,7 @@ export type Locale = 'en' | 'pl'
 export const LINKS = {
   email: 'sobiecki.mj@gmail.com',
   linkedin: 'https://www.linkedin.com/in/milosz-sobiecki/',
-  github: 'https://github.com/sobusz',
+  github: 'https://github.com/sobusz/playwright-portfolio',
   cv: '/Milosz-Sobiecki-CV.pdf',
 }
 
@@ -45,6 +45,7 @@ type Copy = {
     name: string
     body: string
     tags: string[]
+    cta: string
   }
   experienceTitle: string
   roles: {
@@ -93,6 +94,7 @@ export const copy: Record<Locale, Copy> = {
       name: 'Playwright portfolio',
       body: 'A TypeScript suite on public demo apps: UI/E2E, API CRUD with Zod contracts, Axe accessibility, visual regression, performance smoke, auth storage state, and network mocking. Page Objects, fixtures, faker factories, tagged runs.',
       tags: ['Playwright', 'Zod', 'Axe', 'POM', 'API', 'Visual', 'Mock'],
+      cta: 'GitHub',
     },
     experienceTitle: 'Experience',
     roles: [
@@ -177,6 +179,7 @@ export const copy: Record<Locale, Copy> = {
       name: 'Playwright portfolio',
       body: 'Suite w TypeScript na publicznych aplikacjach demo: UI/E2E, CRUD API z kontraktami Zod, a11y (Axe), visual regression, smoke wydajnościowy, auth storage state i network mocking. Page Objects, fixtures, fabryki faker, tagi.',
       tags: ['Playwright', 'Zod', 'Axe', 'POM', 'API', 'Visual', 'Mock'],
+      cta: 'GitHub',
     },
     experienceTitle: 'Doświadczenie',
     roles: [
