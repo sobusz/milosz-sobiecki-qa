@@ -4,7 +4,7 @@ export const LINKS = {
   email: 'sobiecki.mj@gmail.com',
   linkedin: 'https://www.linkedin.com/in/milosz-sobiecki/',
   github: 'https://github.com/sobusz/playwright-portfolio',
-  cv: '/Milosz-Sobiecki-CV.pdf',
+  cv: `${import.meta.env.BASE_URL}Milosz-Sobiecki-CV.pdf`,
 }
 
 export const stack = [
