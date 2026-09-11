@@ -29,6 +29,7 @@ export const stack = [
 type Copy = {
   nav: { about: string; stack: string; code: string; project: string; experience: string }
   langLabel: string
+  themeLabel: string
   hero: {
     name: string
     line: string
@@ -68,6 +69,7 @@ export const copy: Record<Locale, Copy> = {
       experience: 'Experience',
     },
     langLabel: 'Language',
+    themeLabel: 'Theme',
     hero: {
       name: 'Miłosz Sobiecki QA Services',
       line: 'E2E automation in TypeScript, with AI in the daily workflow.',
@@ -171,6 +173,7 @@ export const copy: Record<Locale, Copy> = {
       experience: 'Doświadczenie',
     },
     langLabel: 'Język',
+    themeLabel: 'Motyw',
     hero: {
       name: 'Miłosz Sobiecki QA Services',
       line: 'Automatyzacja E2E w TypeScript, z AI w codziennej pracy.',

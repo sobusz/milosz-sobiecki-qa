@@ -3,6 +3,9 @@ import { CodeSnippet } from './components/CodeSnippet'
 import { LINKS, copy, snippets, stack, type Locale } from './content'
 
 const STORAGE_KEY = 'ms-locale'
+const THEME_KEY = 'ms-theme'
+
+type Theme = 'dark' | 'light'
 
 function readLocale(): Locale {
   const stored = localStorage.getItem(STORAGE_KEY)
@@ -12,6 +15,9 @@ function readLocale(): Locale {
 
 export default function App() {
   const [locale, setLocale] = useState<Locale>('en')
+  const [theme, setTheme] = useState<Theme>(() =>
+    document.documentElement.dataset.theme === 'light' ? 'light' : 'dark',
+  )
 
   useEffect(() => {
     setLocale(readLocale())
@@ -22,6 +28,11 @@ export default function App() {
     document.title = 'Miłosz Sobiecki QA Services'
     localStorage.setItem(STORAGE_KEY, locale)
   }, [locale])
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    localStorage.setItem(THEME_KEY, theme)
+  }, [theme])
 
   const t = copy[locale]
 
@@ -61,21 +72,39 @@ export default function App() {
           <a href="#code">{t.nav.code}</a>
           <a href="#work">{t.nav.project}</a>
         </nav>
-        <div className="lang" role="group" aria-label={t.langLabel}>
-          <button
-            type="button"
-            className={locale === 'pl' ? 'is-on' : ''}
-            onClick={() => setLang('pl')}
-          >
-            PL
-          </button>
-          <button
-            type="button"
-            className={locale === 'en' ? 'is-on' : ''}
-            onClick={() => setLang('en')}
-          >
-            EN
-          </button>
+        <div className="nav-tools">
+          <div className="lang" role="group" aria-label={t.langLabel}>
+            <button
+              type="button"
+              className={locale === 'pl' ? 'is-on' : ''}
+              onClick={() => setLang('pl')}
+            >
+              PL
+            </button>
+            <button
+              type="button"
+              className={locale === 'en' ? 'is-on' : ''}
+              onClick={() => setLang('en')}
+            >
+              EN
+            </button>
+          </div>
+          <div className="lang" role="group" aria-label={t.themeLabel}>
+            <button
+              type="button"
+              className={theme === 'dark' ? 'is-on' : ''}
+              onClick={() => setTheme('dark')}
+            >
+              Dark
+            </button>
+            <button
+              type="button"
+              className={theme === 'light' ? 'is-on' : ''}
+              onClick={() => setTheme('light')}
+            >
+              Light
+            </button>
+          </div>
         </div>
       </header>
 
