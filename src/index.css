@@ -318,15 +318,8 @@ main,
 .snippet-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 36px;
-}
-
-@media (min-width: 900px) {
-  .snippet-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px 22px;
-    align-items: start;
-  }
+  gap: 40px;
+  max-width: 78ch;
 }
 
 .case {
@@ -435,26 +428,11 @@ main,
 
 .snippet pre {
   margin: 0;
-  padding: 16px 0 20px;
+  padding: 18px 0 22px;
   font-family: var(--mono);
-  font-size: 0.74rem;
-  line-height: 1.7;
+  font-size: 0.92rem;
+  line-height: 1.72;
   overflow-x: auto;
-}
-
-@media (min-width: 900px) {
-  .snippet-grid .snippet pre {
-    font-size: 0.64rem;
-    line-height: 1.65;
-  }
-
-  .case h3 {
-    font-size: 1.18rem;
-  }
-
-  .case-head {
-    grid-template-columns: 28px 1fr;
-  }
 }
 
 .snippet-line {
