@@ -185,7 +185,7 @@ export const copy: Record<Locale, Copy> = {
     stackTitle: 'Stack',
     snippets: {
       title: 'How I test',
-      hint: 'Hover to check the assertion.',
+      hint: 'Illustrative examples of how I design tests. Hover to highlight the key checks.',
     },
     projectsTitle: 'Projects',
     projects: [
@@ -289,7 +289,7 @@ export const copy: Record<Locale, Copy> = {
     stackTitle: 'Stack',
     snippets: {
       title: 'Jak testuję',
-      hint: 'Najedź, żeby zobaczyć asercję.',
+      hint: 'Przykłady pokazujące, jak projektuję testy. Najedź, żeby wyróżnić kluczowe sprawdzenia.',
     },
     projectsTitle: 'Projekty',
     projects: [
@@ -377,148 +377,387 @@ export const snippets: {
   lines: SnippetLine[]
 }[] = [
   {
-    id: 'e2e',
-    file: 'tests/pages/the-internet/login-page.ts',
-    title: { en: 'E2E page object', pl: 'Page object E2E' },
-    body: {
-      en: 'Roles and labels, not a pile of CSS selectors. The test reads like a user.',
-      pl: 'Role i labele, nie stos selektorów CSS. Test czyta się jak użytkownik.',
+    "id": "e2e",
+    "file": "TypeScript · Playwright",
+    "title": {
+      "en": "Maintainable browser tests",
+      "pl": "Testy łatwe w utrzymaniu"
     },
-    note: {
-      en: 'The assertion is on the heading the user actually sees.',
-      pl: 'Asercja na nagłówku, który użytkownik naprawdę widzi.',
+    "body": {
+      "en": "I locate controls by their role and label, and keep repeated actions in page objects. This makes scenarios easier to read and update when the interface changes.",
+      "pl": "Wyszukuję elementy po roli i etykiecie, a powtarzalne akcje umieszczam w page objects. Dzięki temu scenariusze są czytelne i łatwiejsze do aktualizacji po zmianach interfejsu."
     },
-    lines: [
-      { text: 'async login(username: string, password: string): Promise<void> {' },
-      { text: "  await this.page.getByLabel('Username').fill(username);" },
-      { text: "  await this.page.getByLabel('Password').fill(password);" },
-      { text: "  await this.page.getByRole('button', { name: 'Login' }).click();" },
-      { text: '}' },
-      { text: '' },
-      { text: 'async expectOnLoginPage(): Promise<void> {', reveal: true },
-      { text: "  await expect(this.page.getByRole('heading', { name: 'Login Page' })).toBeVisible();", reveal: true },
-      { text: '}', reveal: true },
-    ],
+    "note": {
+      "en": "The visible heading confirms which screen the test has reached.",
+      "pl": "Widoczny nagłówek potwierdza, na którym ekranie znajduje się test."
+    },
+    "lines": [
+      {
+        "text": "class LoginPage {"
+      },
+      {
+        "text": "  constructor(private page: Page) {}"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "  async login(username: string, password: string) {"
+      },
+      {
+        "text": "    await this.page.getByLabel('Username').fill(username);"
+      },
+      {
+        "text": "    await this.page.getByLabel('Password').fill(password);"
+      },
+      {
+        "text": "    await this.page.getByRole('button', { name: 'Login' }).click();"
+      },
+      {
+        "text": "  }"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "  async expectSignedIn() {"
+      },
+      {
+        "text": "    await expect(this.page.getByRole('heading', {",
+        "reveal": true
+      },
+      {
+        "text": "      name: 'Your account', exact: true,",
+        "reveal": true
+      },
+      {
+        "text": "    })).toBeVisible();",
+        "reveal": true
+      },
+      {
+        "text": "  }"
+      },
+      {
+        "text": "}"
+      }
+    ]
   },
   {
-    id: 'flow',
-    file: 'tests/ui/automation-exercise/search-and-cart.spec.ts',
-    title: { en: 'E2E user flow', pl: 'Przepływ E2E' },
-    body: {
-      en: 'One path: search, add to cart, open the cart. Pages are composed, not one 200-line spec.',
-      pl: 'Jedna ścieżka: szukaj, dodaj do koszyka, otwórz koszyk. Page’e złożone, nie spec na 200 linii.',
+    "id": "flow",
+    "file": "TypeScript · Playwright",
+    "title": {
+      "en": "Checking the user outcome",
+      "pl": "Weryfikacja efektu dla użytkownika"
     },
-    note: {
-      en: 'The last line is the outcome: the cart table is there.',
-      pl: 'Ostatnia linia to wynik: tabela koszyka jest na miejscu.',
+    "body": {
+      "en": "I build E2E scenarios around a user goal and verify the resulting data. For a shopping journey, that means checking the selected product and quantity in the cart.",
+      "pl": "Buduję scenariusze E2E wokół celu użytkownika i sprawdzam wynik operacji. W ścieżce zakupowej oznacza to weryfikację wybranego produktu i jego ilości w koszyku."
     },
-    lines: [
-      { text: "test('searches for a product and adds it to the cart', async ({ page, siteUrls }) => {" },
-      { text: '  const productsPage = new AutomationExerciseProductsPage(page, siteUrls.automationExercise);' },
-      { text: '  const cartPage = new AutomationExerciseCartPage(page);' },
-      { text: '' },
-      { text: '  await productsPage.goto();' },
-      { text: '  await productsPage.dismissOverlays();' },
-      { text: "  await productsPage.searchFor('Top');" },
-      { text: '  await productsPage.expectSearchedProductsVisible();' },
-      { text: '  await productsPage.addFirstProductToCart();' },
-      { text: '  await productsPage.openViewCart();' },
-      { text: '  await cartPage.expectCartTableVisible();', reveal: true },
-      { text: '});' },
-    ],
+    "note": {
+      "en": "Opening the cart is a step; finding the correct item is the result.",
+      "pl": "Otwarcie koszyka to krok. Poprawny produkt w koszyku to wynik."
+    },
+    "lines": [
+      {
+        "text": "test('keeps the selected product in the cart', async ({ page }) => {"
+      },
+      {
+        "text": "  await page.goto('/products');"
+      },
+      {
+        "text": "  await page.getByRole('searchbox').fill('Cotton shirt');"
+      },
+      {
+        "text": "  await page.getByRole('button', { name: 'Search', exact: true }).click();"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "  const product = page.getByRole('article')"
+      },
+      {
+        "text": "    .filter({ hasText: 'Cotton shirt' });"
+      },
+      {
+        "text": "  await product.getByRole('button', { name: 'Add to cart' }).click();"
+      },
+      {
+        "text": "  await page.getByRole('link', { name: 'Cart', exact: true }).click();"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "  const item = page.getByRole('row').filter({ hasText: 'Cotton shirt' });"
+      },
+      {
+        "text": "  await expect(item).toHaveCount(1);",
+        "reveal": true
+      },
+      {
+        "text": "  await expect(item.getByRole('spinbutton', { name: 'Quantity' }))",
+        "reveal": true
+      },
+      {
+        "text": "    .toHaveValue('1');",
+        "reveal": true
+      },
+      {
+        "text": "});"
+      }
+    ]
   },
   {
-    id: 'a11y',
-    file: 'tests/a11y/the-internet.a11y.spec.ts',
-    title: { en: 'Accessibility', pl: 'Accessibility' },
-    body: {
-      en: 'Axe in the suite. Fail on critical issues, keep the rest on the report.',
-      pl: 'Axe w suite. Fail na critical, reszta zostaje na raporcie.',
+    "id": "a11y",
+    "file": "TypeScript · Playwright · Axe",
+    "title": {
+      "en": "Accessibility checks",
+      "pl": "Sprawdzanie dostępności"
     },
-    note: {
-      en: 'Critical is a gate. The JSON attachment is for the rest.',
-      pl: 'Critical to bramka. Attachment JSON jest do reszty.',
+    "body": {
+      "en": "I include automated accessibility checks in browser tests and prioritise findings by severity. Reports help the team investigate issues; keyboard and screen reader checks complement automation.",
+      "pl": "Włączam automatyczne sprawdzanie dostępności do testów przeglądarkowych i priorytetyzuję problemy według ich wagi. Raport pomaga w analizie, a testy klawiaturą i czytnikiem ekranu uzupełniają automat."
     },
-    lines: [
-      { text: "test('login page has no critical a11y violations', async ({ page, siteUrls }) => {" },
-      { text: '  const loginPage = new TheInternetLoginPage(page, siteUrls.theInternet);' },
-      { text: '  await loginPage.goto();' },
-      { text: '  await loginPage.expectOnLoginPage();' },
-      { text: '' },
-      { text: "  await runA11yAudit(page, { impacts: ['critical'] });", reveal: true },
-      { text: '});' },
-    ],
+    "note": {
+      "en": "This example fails on serious and critical findings and reports all violations.",
+      "pl": "Przykład zatrzymuje test przy problemach serious i critical, a raport zawiera wszystkie wykryte naruszenia."
+    },
+    "lines": [
+      {
+        "text": "test('checks login accessibility', async ({ page }, testInfo) => {"
+      },
+      {
+        "text": "  await page.goto('/login');"
+      },
+      {
+        "text": "  const results = await new AxeBuilder({ page }).analyze();"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "  await testInfo.attach('accessibility.json', {"
+      },
+      {
+        "text": "    body: JSON.stringify(results.violations, null, 2),"
+      },
+      {
+        "text": "    contentType: 'application/json',"
+      },
+      {
+        "text": "  });"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "  const blocking = results.violations.filter(({ impact }) =>",
+        "reveal": true
+      },
+      {
+        "text": "    impact === 'critical' || impact === 'serious',",
+        "reveal": true
+      },
+      {
+        "text": "  );"
+      },
+      {
+        "text": "  expect(blocking).toEqual([]);",
+        "reveal": true
+      },
+      {
+        "text": "});"
+      }
+    ]
   },
   {
-    id: 'contract',
-    file: 'tests/utils/restful-booker.schemas.ts',
-    title: { en: 'API contract', pl: 'Kontrakt API' },
-    body: {
-      en: 'A 200 is not enough. Dates have a shape, and checkout has to be after checkin.',
-      pl: 'Samo 200 nie wystarczy. Daty mają kształt, a checkout musi być po checkin.',
+    "id": "contract",
+    "file": "TypeScript · Zod",
+    "title": {
+      "en": "Validating data and business rules",
+      "pl": "Walidacja danych i reguł biznesowych"
     },
-    note: {
-      en: 'The refine is the business rule, not the HTTP status.',
-      pl: 'Refine to reguła biznesowa, nie status HTTP.',
+    "body": {
+      "en": "I check both the structure of API data and the rules it must satisfy. A booking needs valid calendar dates and a checkout later than check-in.",
+      "pl": "Sprawdzam zarówno strukturę danych API, jak i reguły, które muszą spełniać. Rezerwacja wymaga poprawnych dat kalendarzowych i zakończenia pobytu po jego rozpoczęciu."
     },
-    lines: [
-      { text: 'const isoDate = z.string().regex(/^\\d{4}-\\d{2}-\\d{2}$/, "expected YYYY-MM-DD");' },
-      { text: '' },
-      { text: 'export const bookingDatesSchema = z' },
-      { text: '  .object({ checkin: isoDate, checkout: isoDate })' },
-      { text: '  .refine((dates) => dates.checkout > dates.checkin, {', reveal: true },
-      { text: "    message: 'checkout must be after checkin',", reveal: true },
-      { text: "    path: ['checkout'],", reveal: true },
-      { text: '  });' },
-    ],
+    "note": {
+      "en": "The schema checks dates and their order; parsing applies those checks to the response.",
+      "pl": "Schemat sprawdza daty i ich kolejność, a parse stosuje te reguły do odpowiedzi API."
+    },
+    "lines": [
+      {
+        "text": "const bookingDatesSchema = z.object({"
+      },
+      {
+        "text": "  checkin: z.iso.date(),"
+      },
+      {
+        "text": "  checkout: z.iso.date(),"
+      },
+      {
+        "text": "}).refine(({ checkin, checkout }) => checkout > checkin, {",
+        "reveal": true
+      },
+      {
+        "text": "  message: 'Checkout must be after check-in',",
+        "reveal": true
+      },
+      {
+        "text": "  path: ['checkout'],",
+        "reveal": true
+      },
+      {
+        "text": "});"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "const response = await request.get('/booking/42');"
+      },
+      {
+        "text": "expect(response.ok()).toBeTruthy();"
+      },
+      {
+        "text": "const booking = await response.json();"
+      },
+      {
+        "text": "bookingDatesSchema.parse(booking.bookingdates);",
+        "reveal": true
+      }
+    ]
   },
   {
-    id: 'data',
-    file: 'tests/data/factories/booking-factory.ts',
-    title: { en: 'Test data', pl: 'Dane testowe' },
-    body: {
-      en: 'A factory instead of a copied JSON file. Random names, valid dates, overrides when the case needs a fixed field.',
-      pl: 'Fabryka zamiast skopiowanego JSON-a. Losowe imiona, poprawne daty, override gdy case potrzebuje stałego pola.',
+    "id": "data",
+    "file": "TypeScript · Faker",
+    "title": {
+      "en": "Test data with a clear purpose",
+      "pl": "Dane dopasowane do scenariusza"
     },
-    note: {
-      en: 'checkout is always after checkin, even when names are random.',
-      pl: 'checkout zawsze po checkin, nawet gdy imiona są losowe.',
+    "body": {
+      "en": "I use factories to create a valid starting point, then change only the fields relevant to the scenario. This keeps test intent visible and makes boundary cases easier to express.",
+      "pl": "Używam fabryk danych jako poprawnego punktu wyjścia, a potem zmieniam pola istotne dla scenariusza. Dzięki temu łatwiej odczytać cel testu i przygotować przypadki brzegowe."
     },
-    lines: [
-      { text: 'export const buildBookingPayload = (' },
-      { text: '  overrides: Partial<BookingPayload> = {},' },
-      { text: '): BookingPayload => {' },
-      { text: '  const checkinDate = addDays(new Date(), faker.number.int({ min: 1, max: 20 }));' },
-      { text: '  const checkoutDate = addDays(checkinDate, faker.number.int({ min: 1, max: 7 }));', reveal: true },
-      { text: '' },
-      { text: '  return {' },
-      { text: '    firstname: faker.person.firstName(),' },
-      { text: '    lastname: faker.person.lastName(),' },
-      { text: '    bookingdates: { checkin: formatDate(checkinDate), checkout: formatDate(checkoutDate) },' },
-      { text: '    ...overrides,', reveal: true },
-      { text: '  };' },
-      { text: '};' },
-    ],
+    "note": {
+      "en": "Fixed dates keep this example predictable; overrides can also create deliberately invalid data.",
+      "pl": "Stałe daty zapewniają przewidywalność przykładu. Nadpisanie pól pozwala też celowo utworzyć niepoprawne dane."
+    },
+    "lines": [
+      {
+        "text": "const buildBooking = (overrides: Partial<BookingPayload> = {})"
+      },
+      {
+        "text": "  : BookingPayload => ({"
+      },
+      {
+        "text": "    firstname: faker.person.firstName(),"
+      },
+      {
+        "text": "    lastname: faker.person.lastName(),"
+      },
+      {
+        "text": "    totalprice: 120,"
+      },
+      {
+        "text": "    depositpaid: false,"
+      },
+      {
+        "text": "    bookingdates: { checkin: '2030-06-10', checkout: '2030-06-12' },"
+      },
+      {
+        "text": "    ...overrides,"
+      },
+      {
+        "text": "  });"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "const unpaid = buildBooking({ depositpaid: false });",
+        "reveal": true
+      },
+      {
+        "text": "const invalidDates = buildBooking({",
+        "reveal": true
+      },
+      {
+        "text": "  bookingdates: { checkin: '2030-06-12', checkout: '2030-06-10' },",
+        "reveal": true
+      },
+      {
+        "text": "});"
+      }
+    ]
   },
   {
-    id: 'auth',
-    file: 'tests/global-setup.ts',
-    title: { en: 'Auth state', pl: 'Auth state' },
-    body: {
-      en: 'Log in once, save storageState. The next spec does not type the password again.',
-      pl: 'Login raz, zapis storageState. Kolejny spec nie wpisuje hasła drugi raz.',
+    "id": "auth",
+    "file": "TypeScript · Playwright",
+    "title": {
+      "en": "Reliable test setup",
+      "pl": "Przewidywalne przygotowanie testów"
     },
-    note: {
-      en: 'Wait for the flash, then persist cookies.',
-      pl: 'Czekaj na flash, potem zapisz cookies.',
+    "body": {
+      "en": "I separate login checks from scenarios that only need an authenticated user. Reusing a verified session reduces repeated setup and keeps each test focused on its purpose.",
+      "pl": "Oddzielam testy logowania od scenariuszy, które potrzebują zalogowanego użytkownika. Wykorzystanie zweryfikowanej sesji ogranicza powtarzalne przygotowanie i pozwala skupić test na jego celu."
     },
-    lines: [
-      { text: "await page.getByLabel('Username').fill('tomsmith');" },
-      { text: "await page.getByLabel('Password').fill('SuperSecretPassword!');" },
-      { text: "await page.getByRole('button', { name: 'Login' }).click();" },
-      { text: '' },
-      { text: "await page.locator('#flash').waitFor({ state: 'visible' });" },
-      { text: 'await page.context().storageState({ path: authFile });', reveal: true },
-    ],
-  },
+    "note": {
+      "en": "Save the session only after confirming successful login. Keep authentication state out of version control.",
+      "pl": "Sesję zapisuję po potwierdzeniu udanego logowania. Pliki sesji pozostają poza kontrolą wersji."
+    },
+    "lines": [
+      {
+        "text": "setup('authenticate', async ({ page }) => {"
+      },
+      {
+        "text": "  const username = process.env.E2E_USERNAME;"
+      },
+      {
+        "text": "  const password = process.env.E2E_PASSWORD;"
+      },
+      {
+        "text": "  if (!username || !password) throw new Error('Missing test credentials');"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "  await page.goto('/login');"
+      },
+      {
+        "text": "  await page.getByLabel('Username').fill(username);"
+      },
+      {
+        "text": "  await page.getByLabel('Password').fill(password);"
+      },
+      {
+        "text": "  await page.getByRole('button', { name: 'Login' }).click();"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "  await expect(page.getByRole('heading', {",
+        "reveal": true
+      },
+      {
+        "text": "    name: 'Your account', exact: true,",
+        "reveal": true
+      },
+      {
+        "text": "  })).toBeVisible();",
+        "reveal": true
+      },
+      {
+        "text": "  await page.context().storageState({ path: 'playwright/.auth/user.json' });",
+        "reveal": true
+      },
+      {
+        "text": "});"
+      }
+    ]
+  }
 ]
+
