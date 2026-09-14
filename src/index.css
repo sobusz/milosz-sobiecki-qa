@@ -8,8 +8,8 @@
   color-scheme: dark;
   --bg: #070707;
   --fg: #f3f3f3;
-  --muted: #8d8d8d;
-  --copy: #cfcfcf;
+  --muted: #a8a8a8;
+  --copy: #ececec;
   --line: rgba(255, 255, 255, 0.1);
   --soft: rgba(255, 255, 255, 0.04);
   --hover-fill: rgba(255, 255, 255, 0.06);
@@ -65,6 +65,13 @@
 html {
   scroll-behavior: smooth;
   background: var(--bg);
+  font-size: 16px;
+}
+
+@media (min-width: 1100px) {
+  html {
+    font-size: 19px;
+  }
 }
 
 body {
@@ -73,7 +80,7 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.55;
 }
@@ -201,7 +208,8 @@ main,
 
 .lede {
   margin: 28px 0 14px;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
+  font-weight: 400;
 }
 
 .facts {
@@ -277,6 +285,8 @@ main,
 .block p {
   max-width: 88ch;
   color: var(--copy);
+  font-size: 1.12rem;
+  line-height: 1.65;
 }
 
 .hint {
@@ -285,8 +295,9 @@ main,
 }
 
 #stack .chips {
-  max-width: 88ch;
+  max-width: none;
   overflow: visible;
+  gap: 14px;
 }
 
 #stack .chips > li {
@@ -305,9 +316,12 @@ main,
 
 #stack .chip-label {
   display: inline-block;
-  padding: 7px 12px;
-  border: 1px solid var(--line);
+  padding: 16px 26px;
+  border: 1px solid color-mix(in srgb, var(--fg) 45%, transparent);
   border-radius: 999px;
+  font-size: 1.28rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   cursor: default;
   transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
 }
@@ -325,14 +339,14 @@ main,
   top: 0;
   z-index: 20;
   width: max-content;
-  max-width: min(32ch, calc(100vw - 24px));
-  padding: 8px 11px;
+  max-width: min(42ch, calc(100vw - 24px));
+  padding: 10px 14px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 10px;
   background: var(--fg);
   color: var(--bg);
-  font-size: 0.78rem;
-  line-height: 1.4;
+  font-size: 1.05rem;
+  line-height: 1.5;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
   opacity: 0;
   visibility: hidden;
@@ -655,7 +669,7 @@ main,
   margin-top: 6px;
   padding-left: 1.1em;
   color: var(--copy);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   white-space: nowrap;
 }
 

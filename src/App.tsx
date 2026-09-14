@@ -13,7 +13,7 @@ function placeChipTip(event: { currentTarget: EventTarget }) {
   if (!tip) return
 
   const pad = 12
-  const maxWidth = Math.min(288, window.innerWidth - pad * 2)
+  const maxWidth = Math.min(420, window.innerWidth - pad * 2)
   tip.style.maxWidth = `${maxWidth}px`
   tip.style.left = '0px'
   tip.style.top = '0px'
