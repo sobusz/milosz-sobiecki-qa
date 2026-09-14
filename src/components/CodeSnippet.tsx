@@ -103,7 +103,7 @@ export function CodeSnippet({ file, note, lines, locale }: Props) {
         </pre>
       </div>
       <p className="snippet-note">
-        <span>{locale === 'pl' ? 'Nota' : 'Note'}</span>
+        <span>{locale === 'pl' ? 'W praktyce' : 'Note'}</span>
         {note}
       </p>
     </article>

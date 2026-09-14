@@ -12,112 +12,112 @@ export const stack: { name: string; blurb: { en: string; pl: string } }[] = [
     name: 'TypeScript',
     blurb: {
       en: 'Typed JavaScript. I write E2E and API tests in it so the suite stays readable and refactors safely.',
-      pl: 'Typowany JavaScript. Piszę w nim testy E2E i API, żeby suite był czytelny i bezpieczny przy zmianach.',
+      pl: 'Testy E2E i API tworzę w TypeScript — dzięki typowaniu łatwiej mi wyłapywać błędy podczas pisania kodu.',
     },
   },
   {
     name: 'AI in QA',
     blurb: {
       en: 'Models for a first draft of tests and analysis. I still review prompts and output before anything lands in the suite.',
-      pl: 'Modele do draftu testów i analizy. Prompt i output recenzuję, zanim coś trafi do suite’u.',
+      pl: 'AI pomaga mi projektować testy i analizować problemy — proponowane rozwiązania sprawdzam, zanim wykorzystam je w kodzie.',
     },
   },
   {
     name: 'Playwright',
     blurb: {
       en: 'Browser automation. My main tool for E2E: page objects, fixtures, and runs in CI.',
-      pl: 'Automatyzacja przeglądarki. Główne narzędzie do E2E: page objects, fixtures i odpalanie w CI.',
+      pl: 'Testy E2E tworzę głównie w Playwright. Powtarzalne czynności wydzielam do klas stron, żeby łatwiej rozwijać i utrzymywać scenariusze.',
     },
   },
   {
     name: 'Cypress',
     blurb: {
       en: 'UI test runner I still maintain on projects that already have Cypress regression.',
-      pl: 'Runner testów UI. Utrzymuję go tam, gdzie regresja już stoi na Cypressie.',
+      pl: 'W Cypress rozwijam istniejące testy interfejsu i dostosowuję je do zmian w aplikacji.',
     },
   },
   {
     name: 'REST API',
     blurb: {
       en: 'HTTP APIs. I check status, body, auth, and that the flow still holds end to end.',
-      pl: 'API po HTTP. Sprawdzam status, body, auth i to, czy przepływ trzyma się od początku do końca.',
+      pl: 'Testując API, sprawdzam odpowiedzi, dane i uwierzytelnianie, a także to, czy kolejne operacje dają oczekiwany wynik.',
     },
   },
   {
     name: 'Node.js',
     blurb: {
       en: 'Runtime for the TypeScript checks — API tests, fixtures, and helpers around Playwright.',
-      pl: 'Runtime dla testów w TypeScript — API, fixtures i helpery wokół Playwrighta.',
+      pl: 'W Node.js uruchamiam testy API i piszę narzędzia pomocnicze, które ułatwiają mi pracę z testami.',
     },
   },
   {
     name: 'Mocha / Chai',
     blurb: {
       en: 'Classic Node test stack. I use it for API automation on distributed services.',
-      pl: 'Klasyczny stack testów w Node. Używam do automatyzacji API na usługach rozproszonych.',
+      pl: 'Z Mocha i Chai korzystam przy testowaniu API usług rozproszonych — uruchamiam scenariusze i sprawdzam ich wyniki.',
     },
   },
   {
     name: 'Supertest',
     blurb: {
       en: 'HTTP assertions from Node. I hit endpoints and check the response without a browser.',
-      pl: 'Asercje HTTP z Node. Wołam endpointy i sprawdzam odpowiedź bez przeglądarki.',
+      pl: 'W Supertest wysyłam żądania HTTP i sprawdzam odpowiedzi API bez uruchamiania przeglądarki.',
     },
   },
   {
     name: 'Zod',
     blurb: {
       en: 'Schemas for API bodies. A 200 is not enough — the payload has to match the contract.',
-      pl: 'Schematy na body API. Samo 200 nie wystarczy — payload musi zgadzać się z kontraktem.',
+      pl: 'W Zod opisuję, jakie dane powinno zwracać API — dzięki temu łatwiej wykrywam brakujące pola i niepoprawne wartości.',
     },
   },
   {
     name: 'PostgreSQL',
     blurb: {
       en: 'SQL database. I verify what the API persisted, not only what it returned.',
-      pl: 'Baza SQL. Sprawdzam, co API zapisało, nie tylko to, co zwróciło.',
+      pl: 'Za pomocą SQL sprawdzam, czy operacja w aplikacji poprawnie zapisała lub zmieniła dane w PostgreSQL.',
     },
   },
   {
     name: 'AMQP',
     blurb: {
       en: 'Message queues. I follow async flows: message in, side effects out.',
-      pl: 'Kolejki wiadomości. Śledzę przepływy async: message wchodzi, skutki uboczne wychodzą.',
+      pl: 'Przy komunikacji przez AMQP sprawdzam, czy wiadomości docierają do odpowiednich usług i wywołują oczekiwane zmiany.',
     },
   },
   {
     name: 'JMeter',
     blurb: {
       en: 'Load tests. I run scenarios before release and read times and saturation with the team.',
-      pl: 'Testy obciążeniowe. Odpalam scenariusze przed release’em i czytam czasy i saturację z zespołem.',
+      pl: 'W JMeter sprawdzam, jak aplikacja zachowuje się pod obciążeniem. Czasy odpowiedzi i wykorzystanie zasobów analizuję wspólnie z zespołem.',
     },
   },
   {
     name: 'Postman',
     blurb: {
       en: 'Manual API client. I explore endpoints, auth, and reproductions before they become automated checks.',
-      pl: 'Ręczny klient API. Eksploruję endpointy, auth i reprodukcje, zanim wejdą w automat.',
+      pl: 'Zanim zautomatyzuję testy API, w Postmanie poznaję jego działanie, sprawdzam uwierzytelnianie i odtwarzam zgłoszone błędy.',
     },
   },
   {
     name: 'CI/CD',
     blurb: {
       en: 'Pipelines. Tests run on every relevant change, with failure analysis before UAT.',
-      pl: 'Pipeline’y. Testy lecą przy zmianie, a pady analizuję zanim dojdziemy do UAT.',
+      pl: 'Testy uruchamiam w CI, żeby po zmianach w kodzie szybko otrzymać informację o błędach. Sprawdzam też przyczyny nieudanych uruchomień.',
     },
   },
   {
     name: 'Git',
     blurb: {
       en: 'Version control for tests and helpers, same review flow as application code.',
-      pl: 'Kontrola wersji testów i helperów, ten sam review co przy kodzie aplikacji.',
+      pl: 'W Git zapisuję zmiany w testach i kodzie pomocniczym — mogę wrócić do wcześniejszej wersji i przejrzeć zmiany przed ich połączeniem.',
     },
   },
   {
     name: 'Axe',
     blurb: {
       en: 'Accessibility scans in Playwright. Critical issues fail the run; the rest goes on the report.',
-      pl: 'Skan a11y w Playwright. Critical sypie run, reszta ląduje na raporcie.',
+      pl: 'Z Axe korzystam do wykrywania problemów z dostępnością. Wyniki zapisuję w raporcie i określam, które problemy mają powodować niepowodzenie testu.',
     },
   },
 ]
@@ -263,7 +263,7 @@ export const copy: Record<Locale, Copy> = {
   pl: {
     nav: {
       about: 'O mnie',
-      stack: 'Stack',
+      stack: 'Technologie',
       code: 'Kod',
       project: 'Projekty',
       experience: 'Doświadczenie',
@@ -273,20 +273,20 @@ export const copy: Record<Locale, Copy> = {
     hero: {
       name: 'Miłosz Sobiecki QA Services',
       line: 'Automatyzacja E2E w TypeScript, z AI w codziennej pracy.',
-      location: 'Dostępny · Gdańsk / hybryda / remote PL · B2B',
-      languages: 'Polski native · English C1 · włoski B1',
+      location: 'Dostępny do współpracy · Gdańsk / hybrydowo / zdalnie w Polsce · B2B',
+      languages: 'Polski — ojczysty · angielski C1 · włoski B1',
       cv: 'Pobierz CV',
       mail: 'E-mail',
     },
     about: {
       title: 'O mnie',
       body: [
-        'QA automation engineer z Gdańska. Pięć lat na webie, mobile i backendzie. Skupiam się na automatyzacji E2E; po drodze też testy API, fintech i projekty regulowane.',
-        'Piszę suite’y E2E w Playwright i Cypress, a także testy TypeScript na REST i integracje asynchroniczne. Sprawdzam dane w PostgreSQL i odpalam JMeter przed release’em. Pracuję z developerami od designu po UAT.',
-        'Ostatnio skupiam się na AI w QA: draft testów, sprawdzanie promptów i outputu modelu, recenzja zanim coś trafi do suite’u. Magister informatyki i ekonometrii, Uniwersytet Gdański.',
+        'Jestem QA Engineerem z Gdańska i od pięciu lat testuję aplikacje webowe, mobilne oraz backend. Najwięcej uwagi poświęcam automatyzacji E2E. Mam też doświadczenie w testach API i projektach finansowych, w których trzeba uwzględniać wymagania regulacyjne.',
+        'Na co dzień pracuję z Playwright, Cypress i TypeScript. Zależnie od projektu sprawdzam też dane w PostgreSQL, integracje asynchroniczne i zachowanie aplikacji pod obciążeniem. Z programistami współpracuję od projektowania rozwiązania po testy akceptacyjne.',
+        'Obecnie najbardziej interesuje mnie AI i to, jak mogę wykorzystać je w pracy QA. Na co dzień pomaga mi projektować testy i analizować problemy, a proponowane rozwiązania weryfikuję przed użyciem. W tym kierunku chcę się dalej rozwijać. Ukończyłem studia magisterskie z informatyki i ekonometrii na Uniwersytecie Gdańskim.',
       ],
     },
-    stackTitle: 'Stack',
+    stackTitle: 'Technologie',
     snippets: {
       title: 'Jak testuję',
       hint: 'Przykłady pokazujące, jak projektuję testy. Najedź, żeby wyróżnić kluczowe sprawdzenia.',
@@ -295,7 +295,7 @@ export const copy: Record<Locale, Copy> = {
     projects: [
       {
         name: 'Playwright portfolio',
-        body: 'Suite w TypeScript: UI/E2E, CRUD API z Zod, Axe, visual regression, smoke wydajnościowy, auth storage state i mocki sieci. Page Objects, fixtures, fabryki faker, tagi.',
+        body: 'W tym projekcie pokazuję, jak organizuję testy E2E i API w TypeScript. Są tu również testy dostępności i regresji wizualnej oraz przykłady przygotowania danych, zapisania sesji i symulowania odpowiedzi API.',
         tags: ['Playwright', 'Zod', 'Axe', 'POM', 'API', 'Visual', 'Mock'],
         cta: 'GitHub',
         href: LINKS.github,
@@ -307,41 +307,41 @@ export const copy: Record<Locale, Copy> = {
         company: 'Boldare',
         role: 'QA Engineer',
         dates: 'cze 2025 — obecnie',
-        meta: 'Remote · B2B',
+        meta: 'Zdalnie · B2B',
         points: [
-          'Automatyzacja API w TypeScript (Mocha, Chai, Supertest) w usługach rozproszonych.',
-          'AMQP, PostgreSQL, raporty i sprawdzenia JMeter przed release’em.',
-          'Cypress/Playwright w CI, wsparcie UAT i testy z pomocą AI.',
+          'Tworzę testy API usług rozproszonych w TypeScript, Mocha, Chai i Supertest.',
+          'Sprawdzam komunikaty AMQP, dane i raporty oraz wykonuję testy obciążeniowe w JMeter.',
+          'Utrzymuję testy Cypress i Playwright w CI, wspieram UAT i korzystam z AI.',
         ],
       },
       {
         company: 'Bright Inventions',
         role: 'QA Engineer',
         dates: 'mar 2024 — cze 2025',
-        meta: 'B2B · hybryda · Gdańsk',
+        meta: 'B2B · hybrydowo · Gdańsk',
         points: [
-          'QA funkcyjne, eksploracyjne i regresja web i mobile, w tym płatności.',
-          'REST, auth i integracje w Postmanie; SQL i logi z urządzeń.',
-          'Plany testów oraz wsparcie wydań do sklepu i na produkcję.',
+          'Testowałem aplikacje webowe i mobilne, w tym obsługę płatności.',
+          'Sprawdzałem API w Postmanie, dane za pomocą SQL i logi z urządzeń.',
+          'Przygotowywałem plany testów i wspierałem wdrożenia oraz publikacje aplikacji.',
         ],
       },
       {
         company: 'Boldare',
         role: 'QA Engineer',
         dates: 'sie 2022 — lut 2024',
-        meta: 'Remote',
+        meta: 'Zdalnie',
         points: [
-          'Testy backendu w środowisku regulowanym: REST, dane, przepływy async.',
-          'Testy API w TypeScript oraz regresja Cypress/Playwright w CI.',
+          'Testowałem API, dane i operacje asynchroniczne w środowisku regulowanym.',
+          'Rozwijałem testy API w TypeScript i testy regresyjne Cypress i Playwright w CI.',
         ],
       },
       {
         company: 'EPAM Systems',
         role: 'Junior Software Test Automation Engineer',
         dates: 'cze 2022 — sie 2022',
-        meta: 'Remote',
+        meta: 'Zdalnie',
         points: [
-          'Scenariusze web z wymagań, smoke/regresja i testy UI w Cypress.',
+          'Tworzyłem scenariusze na podstawie wymagań i automatyzowałem testy UI w Cypress.',
         ],
       },
       {
@@ -350,7 +350,7 @@ export const copy: Record<Locale, Copy> = {
         dates: 'maj 2021 — cze 2022',
         meta: 'Gdańsk',
         points: [
-          'Produkty conversational AI i API: intenty, brzegi, output NLP / LLM.',
+          'Testowałem systemy konwersacyjne AI i API, uwzględniając przypadki brzegowe.',
         ],
       },
       {
@@ -359,7 +359,7 @@ export const copy: Record<Locale, Copy> = {
         dates: 'sty 2021 — maj 2021',
         meta: 'Gdańsk',
         points: [
-          'Testy funkcyjne i regresja, przypadki i defekty w Jira, weryfikacja poprawek.',
+          'Wykonywałem testy funkcjonalne i regresyjne, zgłaszałem błędy i sprawdzałem poprawki.',
         ],
       },
     ],
@@ -385,11 +385,11 @@ export const snippets: {
     },
     "body": {
       "en": "I locate controls by their role and label, and keep repeated actions in page objects. This makes scenarios easier to read and update when the interface changes.",
-      "pl": "Wyszukuję elementy po roli i etykiecie, a powtarzalne akcje umieszczam w page objects. Dzięki temu scenariusze są czytelne i łatwiejsze do aktualizacji po zmianach interfejsu."
+      "pl": "Elementy na stronie wybieram po ich roli i etykiecie, a powtarzalne czynności zapisuję w osobnych metodach. Dzięki temu łatwiej mi zmieniać testy, gdy zmienia się interfejs."
     },
     "note": {
       "en": "The visible heading confirms which screen the test has reached.",
-      "pl": "Widoczny nagłówek potwierdza, na którym ekranie znajduje się test."
+      "pl": "Po logowaniu sprawdzam nagłówek konta, żeby potwierdzić, że użytkownik trafił na właściwy ekran."
     },
     "lines": [
       {
@@ -447,15 +447,15 @@ export const snippets: {
     "file": "TypeScript · Playwright",
     "title": {
       "en": "Checking the user outcome",
-      "pl": "Weryfikacja efektu dla użytkownika"
+      "pl": "Sprawdzanie wyniku całej ścieżki"
     },
     "body": {
       "en": "I build E2E scenarios around a user goal and verify the resulting data. For a shopping journey, that means checking the selected product and quantity in the cart.",
-      "pl": "Buduję scenariusze E2E wokół celu użytkownika i sprawdzam wynik operacji. W ścieżce zakupowej oznacza to weryfikację wybranego produktu i jego ilości w koszyku."
+      "pl": "W testach E2E przechodzę przez kolejne kroki użytkownika i sprawdzam, co z nich wynika. Przy zakupach weryfikuję na przykład, czy do koszyka trafił właściwy produkt i zgadza się liczba sztuk."
     },
     "note": {
       "en": "Opening the cart is a step; finding the correct item is the result.",
-      "pl": "Otwarcie koszyka to krok. Poprawny produkt w koszyku to wynik."
+      "pl": "W koszyku sprawdzam zarówno nazwę produktu, jak i liczbę zamówionych sztuk."
     },
     "lines": [
       {
@@ -516,12 +516,12 @@ export const snippets: {
       "pl": "Sprawdzanie dostępności"
     },
     "body": {
-      "en": "I include automated accessibility checks in browser tests and prioritise findings by severity. Reports help the team investigate issues; keyboard and screen reader checks complement automation.",
-      "pl": "Włączam automatyczne sprawdzanie dostępności do testów przeglądarkowych i priorytetyzuję problemy według ich wagi. Raport pomaga w analizie, a testy klawiaturą i czytnikiem ekranu uzupełniają automat."
+      "en": "I use Axe to find accessibility issues such as missing field labels or insufficient text contrast. I save the results in a report so the team can identify and fix the most serious issues first.",
+      "pl": "Za pomocą Axe wykrywam problemy z dostępnością strony, takie jak brak etykiet pól czy zbyt niski kontrast tekstu. Wyniki zapisuję w raporcie, żeby zespół mógł zacząć poprawki od najpoważniejszych problemów."
     },
     "note": {
       "en": "This example fails on serious and critical findings and reports all violations.",
-      "pl": "Przykład zatrzymuje test przy problemach serious i critical, a raport zawiera wszystkie wykryte naruszenia."
+      "pl": "Test kończy się niepowodzeniem przy problemach poważnych lub krytycznych. Raport zawiera wszystkie wykryte naruszenia."
     },
     "lines": [
       {
@@ -580,11 +580,11 @@ export const snippets: {
     },
     "body": {
       "en": "I check both the structure of API data and the rules it must satisfy. A booking needs valid calendar dates and a checkout later than check-in.",
-      "pl": "Sprawdzam zarówno strukturę danych API, jak i reguły, które muszą spełniać. Rezerwacja wymaga poprawnych dat kalendarzowych i zakończenia pobytu po jego rozpoczęciu."
+      "pl": "W odpowiedzi API sprawdzam format danych i ich sens. Przy rezerwacji weryfikuję na przykład, czy daty są poprawne i czy pobyt kończy się po dniu przyjazdu."
     },
     "note": {
       "en": "The schema checks dates and their order; parsing applies those checks to the response.",
-      "pl": "Schemat sprawdza daty i ich kolejność, a parse stosuje te reguły do odpowiedzi API."
+      "pl": "Za pomocą schematu sprawdzam poprawność dat i kolejność rozpoczęcia oraz zakończenia pobytu."
     },
     "lines": [
       {
@@ -637,12 +637,12 @@ export const snippets: {
       "pl": "Dane dopasowane do scenariusza"
     },
     "body": {
-      "en": "I use factories to create a valid starting point, then change only the fields relevant to the scenario. This keeps test intent visible and makes boundary cases easier to express.",
-      "pl": "Używam fabryk danych jako poprawnego punktu wyjścia, a potem zmieniam pola istotne dla scenariusza. Dzięki temu łatwiej odczytać cel testu i przygotować przypadki brzegowe."
+      "en": "I generate test data in code and adjust it to each scenario. For a booking, I can use valid dates or deliberately reverse them to check how the application handles incorrect input.",
+      "pl": "Dane do testów generuję w kodzie i dopasowuję do konkretnego scenariusza. Przy rezerwacji mogę ustawić poprawne daty albo celowo odwrócić ich kolejność, żeby sprawdzić reakcję aplikacji na błędne dane."
     },
     "note": {
       "en": "Fixed dates keep this example predictable; overrides can also create deliberately invalid data.",
-      "pl": "Stałe daty zapewniają przewidywalność przykładu. Nadpisanie pól pozwala też celowo utworzyć niepoprawne dane."
+      "pl": "W tym przykładzie zostawiam stałe daty, a do testu błędnej rezerwacji celowo odwracam ich kolejność."
     },
     "lines": [
       {
@@ -701,11 +701,11 @@ export const snippets: {
     },
     "body": {
       "en": "I separate login checks from scenarios that only need an authenticated user. Reusing a verified session reduces repeated setup and keeps each test focused on its purpose.",
-      "pl": "Oddzielam testy logowania od scenariuszy, które potrzebują zalogowanego użytkownika. Wykorzystanie zweryfikowanej sesji ogranicza powtarzalne przygotowanie i pozwala skupić test na jego celu."
+      "pl": "Gdy test wymaga zalogowanego użytkownika, korzystam z wcześniej zapisanej sesji. Nie muszę wtedy powtarzać logowania w każdym scenariuszu, a samo logowanie sprawdzam osobno."
     },
     "note": {
       "en": "Save the session only after confirming successful login. Keep authentication state out of version control.",
-      "pl": "Sesję zapisuję po potwierdzeniu udanego logowania. Pliki sesji pozostają poza kontrolą wersji."
+      "pl": "Sesję zapisuję dopiero po potwierdzeniu udanego logowania. Plików sesji nie dodaję do repozytorium."
     },
     "lines": [
       {
@@ -760,4 +760,3 @@ export const snippets: {
     ]
   }
 ]
-

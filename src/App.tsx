@@ -128,14 +128,14 @@ export default function App() {
               className={theme === 'dark' ? 'is-on' : ''}
               onClick={() => setTheme('dark')}
             >
-              Dark
+              {locale === 'pl' ? 'Ciemny' : 'Dark'}
             </button>
             <button
               type="button"
               className={theme === 'light' ? 'is-on' : ''}
               onClick={() => setTheme('light')}
             >
-              Light
+              {locale === 'pl' ? 'Jasny' : 'Light'}
             </button>
           </div>
         </div>
