@@ -7,23 +7,119 @@ export const LINKS = {
   cv: `${import.meta.env.BASE_URL}Milosz-Sobiecki-CV.pdf`,
 }
 
-export const stack = [
-  'TypeScript',
-  'AI in QA',
-  'Playwright',
-  'Cypress',
-  'REST API',
-  'Node.js',
-  'Mocha / Chai',
-  'Supertest',
-  'Zod',
-  'PostgreSQL',
-  'AMQP',
-  'JMeter',
-  'Postman',
-  'CI/CD',
-  'Git',
-  'Axe',
+export const stack: { name: string; blurb: { en: string; pl: string } }[] = [
+  {
+    name: 'TypeScript',
+    blurb: {
+      en: 'Typed JavaScript. I write E2E and API tests in it so the suite stays readable and refactors safely.',
+      pl: 'Typowany JavaScript. Piszę w nim testy E2E i API, żeby suite był czytelny i bezpieczny przy zmianach.',
+    },
+  },
+  {
+    name: 'AI in QA',
+    blurb: {
+      en: 'Models for a first draft of tests and analysis. I still review prompts and output before anything lands in the suite.',
+      pl: 'Modele do draftu testów i analizy. Prompt i output recenzuję, zanim coś trafi do suite’u.',
+    },
+  },
+  {
+    name: 'Playwright',
+    blurb: {
+      en: 'Browser automation. My main tool for E2E: page objects, fixtures, and runs in CI.',
+      pl: 'Automatyzacja przeglądarki. Główne narzędzie do E2E: page objects, fixtures i odpalanie w CI.',
+    },
+  },
+  {
+    name: 'Cypress',
+    blurb: {
+      en: 'UI test runner I still maintain on projects that already have Cypress regression.',
+      pl: 'Runner testów UI. Utrzymuję go tam, gdzie regresja już stoi na Cypressie.',
+    },
+  },
+  {
+    name: 'REST API',
+    blurb: {
+      en: 'HTTP APIs. I check status, body, auth, and that the flow still holds end to end.',
+      pl: 'API po HTTP. Sprawdzam status, body, auth i to, czy przepływ trzyma się od początku do końca.',
+    },
+  },
+  {
+    name: 'Node.js',
+    blurb: {
+      en: 'Runtime for the TypeScript checks — API tests, fixtures, and helpers around Playwright.',
+      pl: 'Runtime dla testów w TypeScript — API, fixtures i helpery wokół Playwrighta.',
+    },
+  },
+  {
+    name: 'Mocha / Chai',
+    blurb: {
+      en: 'Classic Node test stack. I use it for API automation on distributed services.',
+      pl: 'Klasyczny stack testów w Node. Używam do automatyzacji API na usługach rozproszonych.',
+    },
+  },
+  {
+    name: 'Supertest',
+    blurb: {
+      en: 'HTTP assertions from Node. I hit endpoints and check the response without a browser.',
+      pl: 'Asercje HTTP z Node. Wołam endpointy i sprawdzam odpowiedź bez przeglądarki.',
+    },
+  },
+  {
+    name: 'Zod',
+    blurb: {
+      en: 'Schemas for API bodies. A 200 is not enough — the payload has to match the contract.',
+      pl: 'Schematy na body API. Samo 200 nie wystarczy — payload musi zgadzać się z kontraktem.',
+    },
+  },
+  {
+    name: 'PostgreSQL',
+    blurb: {
+      en: 'SQL database. I verify what the API persisted, not only what it returned.',
+      pl: 'Baza SQL. Sprawdzam, co API zapisało, nie tylko to, co zwróciło.',
+    },
+  },
+  {
+    name: 'AMQP',
+    blurb: {
+      en: 'Message queues. I follow async flows: message in, side effects out.',
+      pl: 'Kolejki wiadomości. Śledzę przepływy async: message wchodzi, skutki uboczne wychodzą.',
+    },
+  },
+  {
+    name: 'JMeter',
+    blurb: {
+      en: 'Load tests. I run scenarios before release and read times and saturation with the team.',
+      pl: 'Testy obciążeniowe. Odpalam scenariusze przed release’em i czytam czasy i saturację z zespołem.',
+    },
+  },
+  {
+    name: 'Postman',
+    blurb: {
+      en: 'Manual API client. I explore endpoints, auth, and reproductions before they become automated checks.',
+      pl: 'Ręczny klient API. Eksploruję endpointy, auth i reprodukcje, zanim wejdą w automat.',
+    },
+  },
+  {
+    name: 'CI/CD',
+    blurb: {
+      en: 'Pipelines. Tests run on every relevant change, with failure analysis before UAT.',
+      pl: 'Pipeline’y. Testy lecą przy zmianie, a pady analizuję zanim dojdziemy do UAT.',
+    },
+  },
+  {
+    name: 'Git',
+    blurb: {
+      en: 'Version control for tests and helpers, same review flow as application code.',
+      pl: 'Kontrola wersji testów i helperów, ten sam review co przy kodzie aplikacji.',
+    },
+  },
+  {
+    name: 'Axe',
+    blurb: {
+      en: 'Accessibility scans in Playwright. Critical issues fail the run; the rest goes on the report.',
+      pl: 'Skan a11y w Playwright. Critical sypie run, reszta ląduje na raporcie.',
+    },
+  },
 ]
 
 type Copy = {

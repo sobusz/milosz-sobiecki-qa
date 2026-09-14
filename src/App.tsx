@@ -7,6 +7,39 @@ const THEME_KEY = 'ms-theme'
 
 type Theme = 'dark' | 'light'
 
+function placeChipTip(event: { currentTarget: EventTarget }) {
+  const li = event.currentTarget as HTMLElement
+  const tip = li.querySelector<HTMLElement>('.chip-tip')
+  if (!tip) return
+
+  const pad = 12
+  const maxWidth = Math.min(288, window.innerWidth - pad * 2)
+  tip.style.maxWidth = `${maxWidth}px`
+  tip.style.left = '0px'
+  tip.style.top = '0px'
+
+  const chip = li.getBoundingClientRect()
+  const tw = tip.offsetWidth
+  const th = tip.offsetHeight
+
+  let left = chip.left
+  if (left + tw > window.innerWidth - pad) {
+    left = window.innerWidth - pad - tw
+  }
+  if (left < pad) left = pad
+
+  let top = chip.top - th - 10
+  if (top < pad) {
+    top = chip.bottom + 10
+  }
+  if (top + th > window.innerHeight - pad) {
+    top = Math.max(pad, window.innerHeight - pad - th)
+  }
+
+  tip.style.left = `${Math.round(left)}px`
+  tip.style.top = `${Math.round(top)}px`
+}
+
 function readLocale(): Locale {
   const stored = localStorage.getItem(STORAGE_KEY)
   if (stored === 'pl' || stored === 'en') return stored
@@ -135,7 +168,17 @@ export default function App() {
             <h2>{t.stackTitle}</h2>
             <ul className="chips">
               {stack.map((item) => (
-                <li key={item}>{item}</li>
+                <li
+                  key={item.name}
+                  tabIndex={0}
+                  onMouseEnter={placeChipTip}
+                  onFocus={placeChipTip}
+                >
+                  <span className="chip-label">{item.name}</span>
+                  <span className="chip-tip" role="tooltip">
+                    {item.blurb[locale]}
+                  </span>
+                </li>
               ))}
             </ul>
           </div>
